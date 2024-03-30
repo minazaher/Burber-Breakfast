@@ -33,3 +33,4 @@ D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net8.0\BuberBreakfast.genrun
 D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net8.0\ref\BuberBreakfast.dll
 D:\Projects\.Net\Solution1\BuberBreakfast\bin\Debug\net8.0\BuberBreakfast.Contracts.dll
 D:\Projects\.Net\Solution1\BuberBreakfast\bin\Debug\net8.0\BuberBreakfast.Contracts.pdb
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net8.0\BuberBreakfast.sourcelink.json

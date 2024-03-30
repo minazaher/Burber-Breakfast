@@ -15,4 +15,8 @@
       <ProjectReference Include="..\BuberBreakfast.Contracts\BuberBreakfast.Contracts.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="ServiceErrors\" />
+    </ItemGroup>
+
 </Project>
