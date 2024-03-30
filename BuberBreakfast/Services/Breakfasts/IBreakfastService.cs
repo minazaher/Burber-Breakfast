@@ -1,12 +1,14 @@
 using BuberBreakfast.Contracts.Breakfast;
 using BuberBreakfast.Models;
+using BuberBreakfast.ServiceErrors;
+using ErrorOr;
 
 namespace BuberBreakfast.Services.Breakfasts;
 
 public interface IBreakfastService
 {
     void CreateBreakfast(Breakfast Breakfast);
-    Breakfast GetBreakfast(Guid id);
+    ErrorOr<Breakfast> GetBreakfast(Guid id);
 
     /*
     CreateBreakfastResponse UpdateBreakfast(Guid id, UpdateBreakfastRequest request);
