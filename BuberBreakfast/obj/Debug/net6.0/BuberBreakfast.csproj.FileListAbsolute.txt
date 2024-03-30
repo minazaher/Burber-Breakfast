@@ -1,0 +1,7 @@
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net6.0\BuberBreakfast.csproj.AssemblyReference.cache
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net6.0\BuberBreakfast.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net6.0\BuberBreakfast.AssemblyInfoInputs.cache
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net6.0\BuberBreakfast.AssemblyInfo.cs
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net6.0\BuberBreakfast.csproj.CoreCompileInputs.cache
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net6.0\BuberBreakfast.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\.Net\Solution1\BuberBreakfast\obj\Debug\net6.0\BuberBreakfast.MvcApplicationPartsAssemblyInfo.cache

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "sk2Qise/8kktw1Ztvz+kHAO+qjWvS2BELt+Thr1q0G+jxFx0w/audIifOaChPb/paoOx3PJeemoF62CcAT1UsA==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\.Net\\Solution1\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512"
+  ],
+  "logs": []
+}
