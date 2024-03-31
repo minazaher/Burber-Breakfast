@@ -7,9 +7,12 @@ namespace BuberBreakfast.Services.Breakfasts;
 
 public interface IBreakfastService
 {
-    void CreateBreakfast(Breakfast Breakfast);
+    ErrorOr<Created> CreateBreakfast(Breakfast breakfast);
     ErrorOr<Breakfast> GetBreakfast(Guid id);
 
+    ErrorOr<UpdatedBreakfastCallback> UpdateBreakfast(Breakfast breakfast);
+
+    ErrorOr<Deleted> DeleteBreakfast(Guid id);
     /*
     CreateBreakfastResponse UpdateBreakfast(Guid id, UpdateBreakfastRequest request);
     CreateBreakfastResponse DeleteBreakfast(Guid id);

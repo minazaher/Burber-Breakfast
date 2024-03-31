@@ -8,10 +8,10 @@ public class BreakfastService : IBreakfastService
 {
     private static readonly Dictionary<Guid, Breakfast> Breakfasts = new();
 
-    public void CreateBreakfast(Breakfast breakfast)
+    public ErrorOr<Created> CreateBreakfast(Breakfast breakfast)
     {
         Breakfasts.Add(breakfast.Id, breakfast);
-    }
+        return Result.Created;    }
 
     public ErrorOr<Breakfast> GetBreakfast(Guid id)
     {
@@ -19,6 +19,20 @@ public class BreakfastService : IBreakfastService
         {
             return breakfast;
         }
+
         return Errors.Breakfast.NotFound;
     }
-}    
+
+    public ErrorOr<UpdatedBreakfastCallback> UpdateBreakfast(Breakfast breakfast)
+    {
+        var isNewlyCreated = !Breakfasts.ContainsKey(breakfast.Id);
+        Breakfasts[breakfast.Id] = breakfast;
+        return new UpdatedBreakfastCallback(isNewlyCreated);
+    }
+
+    public ErrorOr<Deleted> DeleteBreakfast(Guid id)
+    {
+        Breakfasts.Remove(id);
+        return Result.Deleted;
+    }
+}
