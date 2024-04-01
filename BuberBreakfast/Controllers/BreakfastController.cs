@@ -54,7 +54,7 @@ public class BreakfastController(IBreakfastService breakfastService) : ApiContro
 
         return updateBreakfastResult.Match(
             updated => updated.IsNewlyCreated ? CreatedAtGetBreakfast(breakfast) : NoContent(),
-            errors => Problem(errors));
+            Problem);
    
 }
     [HttpDelete("{id:guid}")]
@@ -64,7 +64,7 @@ public class BreakfastController(IBreakfastService breakfastService) : ApiContro
         
         return deleteBreakfastResult.Match(
             deleted => NoContent(),
-            errors => Problem(errors) );
+            Problem );
     }
 
     public CreateBreakfastResponse MapBreakfastResponse(Breakfast breakfast)

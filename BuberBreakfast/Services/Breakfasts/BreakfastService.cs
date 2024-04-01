@@ -1,21 +1,24 @@
 using BuberBreakfast.Models;
 using BuberBreakfast.ServiceErrors;
+using BuberBreakfast.Persistence;
 using ErrorOr;
 
 namespace BuberBreakfast.Services.Breakfasts;
 
-public class BreakfastService : IBreakfastService
+public class BreakfastService(DbContext dbContext) : IBreakfastService
 {
-    private static readonly Dictionary<Guid, Breakfast> Breakfasts = new();
+    private readonly DbContext _dbContext = dbContext;
 
     public ErrorOr<Created> CreateBreakfast(Breakfast breakfast)
     {
-        Breakfasts.Add(breakfast.Id, breakfast);
-        return Result.Created;    }
+        _dbContext.Add(breakfast);
+        _dbContext.SaveChanges();
+        return Result.Created;    
+    }
 
     public ErrorOr<Breakfast> GetBreakfast(Guid id)
     {
-        if (Breakfasts.TryGetValue(id, out var breakfast))
+        if (_dbContext.Breakfasts.Find(id) is { } breakfast)
         {
             return breakfast;
         }
@@ -25,14 +28,28 @@ public class BreakfastService : IBreakfastService
 
     public ErrorOr<UpdatedBreakfastCallback> UpdateBreakfast(Breakfast breakfast)
     {
-        var isNewlyCreated = !Breakfasts.ContainsKey(breakfast.Id);
-        Breakfasts[breakfast.Id] = breakfast;
+        var isNewlyCreated = _dbContext.Breakfasts.Find(breakfast.Id) is not null;
+        if (isNewlyCreated)
+        {
+            _dbContext.Add(breakfast);
+        }
+        else
+        {
+            _dbContext.Update(breakfast);
+        }
+        _dbContext.SaveChanges();
         return new UpdatedBreakfastCallback(isNewlyCreated);
     }
 
     public ErrorOr<Deleted> DeleteBreakfast(Guid id)
     {
-        Breakfasts.Remove(id);
+        var breakfast = _dbContext.Breakfasts.Find(id);
+        if (breakfast == null)
+        {
+            return Errors.Breakfast.NotFound;
+        }
+        _dbContext.Remove(breakfast);
+        _dbContext.SaveChanges();
         return Result.Deleted;
     }
 }
