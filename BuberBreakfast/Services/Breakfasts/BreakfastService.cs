@@ -2,23 +2,24 @@ using BuberBreakfast.Models;
 using BuberBreakfast.ServiceErrors;
 using BuberBreakfast.Persistence;
 using ErrorOr;
+using Microsoft.EntityFrameworkCore;
 
 namespace BuberBreakfast.Services.Breakfasts;
 
-public class BreakfastService(DbContext dbContext) : IBreakfastService
+public class BreakfastService(mDbContext mDbContext) : IBreakfastService
 {
-    private readonly DbContext _dbContext = dbContext;
+    private readonly mDbContext _mDbContext = mDbContext;
 
     public ErrorOr<Created> CreateBreakfast(Breakfast breakfast)
     {
-        _dbContext.Add(breakfast);
-        _dbContext.SaveChanges();
+        _mDbContext.Add(breakfast);
+        _mDbContext.SaveChanges();
         return Result.Created;    
     }
 
     public ErrorOr<Breakfast> GetBreakfast(Guid id)
     {
-        if (_dbContext.Breakfasts.Find(id) is { } breakfast)
+        if (_mDbContext.Breakfasts.Find(id) is { } breakfast)
         {
             return breakfast;
         }
@@ -28,28 +29,28 @@ public class BreakfastService(DbContext dbContext) : IBreakfastService
 
     public ErrorOr<UpdatedBreakfastCallback> UpdateBreakfast(Breakfast breakfast)
     {
-        var isNewlyCreated = _dbContext.Breakfasts.Find(breakfast.Id) is not null;
+        var isNewlyCreated = !_mDbContext.Breakfasts.Any((b => b.Id == breakfast.Id));
         if (isNewlyCreated)
         {
-            _dbContext.Add(breakfast);
+            _mDbContext.Add(breakfast);
         }
         else
         {
-            _dbContext.Update(breakfast);
+            _mDbContext.Update(breakfast);
         }
-        _dbContext.SaveChanges();
+        _mDbContext.SaveChanges();
         return new UpdatedBreakfastCallback(isNewlyCreated);
     }
 
     public ErrorOr<Deleted> DeleteBreakfast(Guid id)
     {
-        var breakfast = _dbContext.Breakfasts.Find(id);
+        var breakfast = _mDbContext.Breakfasts.Find(id);
         if (breakfast == null)
         {
             return Errors.Breakfast.NotFound;
         }
-        _dbContext.Remove(breakfast);
-        _dbContext.SaveChanges();
+        _mDbContext.Remove(breakfast);
+        _mDbContext.SaveChanges();
         return Result.Deleted;
     }
 }
