@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.3",
           "Microsoft.EntityFrameworkCore.Design": "8.0.3",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.3",
+          "NSwag.Annotations": "14.0.7",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -462,6 +463,14 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.1.1"
+          }
+        }
+      },
+      "NSwag.Annotations/14.0.7": {
+        "runtime": {
+          "lib/netstandard2.0/NSwag.Annotations.dll": {
+            "assemblyVersion": "14.0.7.0",
+            "fileVersion": "14.0.7.0"
           }
         }
       },
@@ -991,6 +1000,13 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "NSwag.Annotations/14.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eSuuWtX9rb40LPl4srrw4u1KUdc5uKAoTDbQE4wVl1sjx6ErVAjkFEkFiuzb5cE2jvvXI5OrsH1s83mB74KyUA==",
+      "path": "nswag.annotations/14.0.7",
+      "hashPath": "nswag.annotations.14.0.7.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
       "type": "package",

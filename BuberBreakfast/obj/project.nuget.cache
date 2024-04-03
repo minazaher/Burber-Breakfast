@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zVOXdpWB9J+1o0Ap36gtmjdYA75XccaN6BAKjXru1rBfryoxAA1TrY1R+ZDsjX9GdikAnXpYraSR9QG26eH0KQ==",
+  "dgSpecHash": "Dzr6bP9xqVO0UMVY8ohzm/pkRpjZj18on0nkkcCqpcopFFxsVgc9P/rWScYsYEowWBUmLHrPs/FcO+WjuR+mNA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\.Net\\Solution1\\BuberBreakfast\\BuberBreakfast.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\nswag.annotations\\14.0.7\\nswag.annotations.14.0.7.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",

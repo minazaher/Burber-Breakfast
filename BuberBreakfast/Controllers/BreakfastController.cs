@@ -5,6 +5,7 @@ using BuberBreakfast.Services.Breakfasts;
 using Microsoft.AspNetCore.Mvc;
 using ErrorOr;
 using Microsoft.AspNetCore.Authorization;
+using NSwag.Annotations;
 
 namespace BuberBreakfast.Controllers;
 
@@ -69,7 +70,10 @@ public class BreakfastController(IBreakfastService breakfastService) : ApiContro
             Problem );
     }
 
-    public CreateBreakfastResponse MapBreakfastResponse(Breakfast breakfast)
+    [OpenApiIgnore]
+    [SwaggerIgnore]
+    [Obsolete("Obsolete")]
+    private CreateBreakfastResponse MapBreakfastResponse(Breakfast breakfast)
     {
         var response = new CreateBreakfastResponse(breakfast.Id,
             breakfast.Name,
@@ -82,6 +86,9 @@ public class BreakfastController(IBreakfastService breakfastService) : ApiContro
         return response;
     }
     
+    [OpenApiIgnore]
+    [SwaggerIgnore]
+    [Obsolete("Obsolete")]
     private CreatedAtActionResult CreatedAtGetBreakfast(Breakfast breakfast)
     {
         return CreatedAtAction(
