@@ -4,6 +4,8 @@ using BuberBreakfast.ServiceErrors;
 using BuberBreakfast.Services.Breakfasts;
 using Microsoft.AspNetCore.Mvc;
 using ErrorOr;
+using Microsoft.AspNetCore.Authorization;
+
 namespace BuberBreakfast.Controllers;
 
 [ApiController]
@@ -11,7 +13,7 @@ namespace BuberBreakfast.Controllers;
 public class BreakfastController(IBreakfastService breakfastService) : ApiController
 
 {
-    [HttpPost]
+    [HttpPost, Authorize]
     public IActionResult CreateBreakfast(CreateBreakfastRequest request)
     {
         ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.From(request);

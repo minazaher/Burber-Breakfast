@@ -1,10 +1,12 @@
 using BuberBreakfast.Models;
 using BuberBreakfast.ServiceErrors;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BuberBreakfast.Persistence;
 
-public class mDbContext: DbContext
+public class mDbContext: IdentityDbContext
 {
     public mDbContext(DbContextOptions options) : base(options)
     {
@@ -32,6 +34,11 @@ public class mDbContext: DbContext
                     s => s.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()
                 );
         });
-        
+
+        modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(e => e.UserId);
+        modelBuilder.Entity<IdentityUserRole<string>>().HasKey(e => e.UserId);
+        modelBuilder.Entity<IdentityUserToken<string>>().HasKey(e => e.UserId);
+
+
     }
 }
